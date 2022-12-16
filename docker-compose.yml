@@ -1,0 +1,36 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+    volumes:
+      - "./MySQL/conf.d:/etc/mysql/conf.d"
+      - "./MySQL/data:/var/lib/mysql"
+    networks:
+      localServer-bridge:
+        aliases:
+        - mysql
+
+  emqx:
+    image: emqx:latest
+    container_name: emqx
+    volumes:
+      - ./EMQX/data:/opt/emqx/data
+      - ./EMQX/etc:/opt/emqx/opt
+      - ./EMQX/log:/opt/emqx/log
+    ports:
+      - "1883:1883"
+      - "18083:18083"
+    networks:
+      localServer-bridge:
+        aliases:
+        - emqx
+
+networks:
+  localServer-bridge:
+    driver: bridge
