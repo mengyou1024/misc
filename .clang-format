@@ -10,9 +10,11 @@ AlignAfterOpenBracket:	Align
 AlignConsecutiveAssignments:	true
 # 连续声明时，对齐所有声明的变量名
 AlignConsecutiveDeclarations:	true
- 
+# 对齐宏定义
+AlignConsecutiveMacros: true
+
 AlignEscapedNewlines: Right
- 
+
 # 左对齐逃脱换行(使用反斜杠换行)的反斜杠
 #AlignEscapedNewlinesLeft:	true
 # 水平对齐二元和三元表达式的操作数
@@ -23,7 +25,7 @@ AlignTrailingComments:	true
 # 允许函数声明的所有参数在放在下一行
 AllowAllParametersOfDeclarationOnNextLine:	true
 # 允许短的块放在同一行
-AllowShortBlocksOnASingleLine:	false
+AllowShortBlocksOnASingleLine:	true
 # 允许短的case标签放在同一行
 AllowShortCaseLabelsOnASingleLine:	true
 # 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
@@ -43,7 +45,7 @@ AlwaysBreakBeforeMultilineStrings:	false
 # 总是在template声明后换行
 AlwaysBreakTemplateDeclarations:	false
 # false表示函数实参要么都在同一行，要么都各自一行
-BinPackArguments:	true
+BinPackArguments:	false
 # false表示所有形参要么都在同一行，要么都各自一行
 BinPackParameters:	false
 # 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
@@ -90,7 +92,7 @@ BreakBeforeTernaryOperators:	false
 BreakConstructorInitializersBeforeComma:	false
 BreakConstructorInitializers: BeforeColon
 # 每行字符的限制，0表示没有限制
-ColumnLimit:	120
+ColumnLimit:	140
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas:	'^ IWYU pragma:'
 CompactNamespaces: false
