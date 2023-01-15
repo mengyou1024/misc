@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/mengyou/WorkSpaces/linux/arch/arm/include",
+                "/home/mengyou/WorkSpaces/linux/include",
+                "/home/mengyou/WorkSpaces/linux/arch/arm/include/generated"
+            ],
+            "defines": [
+                "__GNUC__",
+                "__KERNEL__",
+                "MODULE"
+            ],
+            "compilerPath": "/usr/bin/arm-linux-gnueabihf-gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode":"linux-gcc-arm"
+        }
+    ],
+    "version": 4
+}
