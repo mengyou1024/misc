@@ -3,6 +3,7 @@ services:
   mysql:
     container_name: mysql
     image: mysql:latest
+    restart: always
     ports:
       - "3306:3306"
       - "33060:33060"
@@ -19,6 +20,7 @@ services:
   emqx:
     image: emqx:latest
     container_name: emqx
+    restart: always
     volumes:
       - ./EMQX/data:/opt/emqx/data
       - ./EMQX/etc:/opt/emqx/opt
@@ -30,6 +32,33 @@ services:
       localServer-bridge:
         aliases:
         - emqx
+
+  gogs:
+    image: gogs/gogs:0.12
+    container_name: gogs
+    restart: always
+    volumes:
+      - ./gogs/data:/data
+    ports:
+      - "3000:3000"
+    networks:
+      localServer-bridge:
+        aliases:
+        - gogs
+
+  kasmweb:
+    image: kasmweb/ubuntu-bionic-desktop:1.10.0-rolling
+    container_name: kasmweb
+    restart: always
+    ports:
+      - "6901:6901"
+    environment:
+      - VNC_PW=0697
+    networks:
+      localServer-bridge:
+        aliases:
+        - kasm
+    shm_size: 512m
 
 networks:
   localServer-bridge:
