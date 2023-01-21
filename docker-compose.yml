@@ -60,6 +60,23 @@ services:
         - kasm
     shm_size: 512m
 
+  tensorflow:
+    container_name: tensorflow
+    image: tensorflow/tensorflow:latest-gpu-jupyter
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - 8888:8888
+    networks:
+      localServer-bridge:
+        aliases:
+        - tensorflow
+
 networks:
   localServer-bridge:
     driver: bridge
