@@ -11,7 +11,7 @@ AlignConsecutiveAssignments:	true
 # 连续声明时，对齐所有声明的变量名
 AlignConsecutiveDeclarations:	true
 # 对齐宏定义
-AlignConsecutiveMacros: true
+AlignConsecutiveMacros: AcrossEmptyLinesAndComments
 
 AlignEscapedNewlines: Right
 
