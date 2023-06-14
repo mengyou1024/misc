@@ -27,7 +27,12 @@ AlignArrayOfStructures: Left
 AlignOperands:	true
 # 对齐连续的尾随的注释
 AlignTrailingComments:	true
- 
+
+# 位域冒号位置
+BitFieldColonSpacing: Before
+# 对齐连续的位于分隔符
+AlignConsecutiveBitFields: true
+
 # 允许函数声明的所有参数在放在下一行
 AllowAllParametersOfDeclarationOnNextLine:	true
 # 允许短的块放在同一行
